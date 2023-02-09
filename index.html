@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>嘉荫堂</title>
+</head>
+
+<body>
+  <div class="loader" id= "loader">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+  </div>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+  <script>
+    const DISABLE_TOUCHMOVE_ID_OR_CLASS = ['model-name', 'mode-switch', 'contorl', 'btn']
+    document.body.addEventListener('touchmove', function (e) {
+      if (DISABLE_TOUCHMOVE_ID_OR_CLASS.some(id => id === e.target.id || id === e.target.className))
+        e.preventDefault();
+    }, {
+      passive: false
+    });
+  </script>
+</body>
+
+</html>
